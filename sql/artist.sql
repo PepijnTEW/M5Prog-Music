@@ -20,7 +20,7 @@ USE `mydb` ;
 CREATE TABLE IF NOT EXISTS `mydb`.`artist` (
   `idartist` INT NOT NULL AUTO_INCREMENT,
   `artist_name` VARCHAR(45) NOT NULL,
-  `artist_date` DATE NOT NULL,
+  `artist_date` INT NOT NULL,
   PRIMARY KEY (`idartist`),
   UNIQUE INDEX `idartist_UNIQUE` (`idartist` ASC) VISIBLE,
   UNIQUE INDEX `artist_name_UNIQUE` (`artist_name` ASC) VISIBLE)
@@ -33,7 +33,7 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `mydb`.`album` (
   `idalbum` INT NOT NULL AUTO_INCREMENT,
   `album_name` VARCHAR(45) NOT NULL,
-  `album_date` DATE NOT NULL,
+  `album_date` INT NOT NULL,
   `artist_idartist` INT NOT NULL,
   PRIMARY KEY (`idalbum`, `artist_idartist`),
   UNIQUE INDEX `idalbum_UNIQUE` (`idalbum` ASC) VISIBLE,
@@ -52,7 +52,7 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `mydb`.`song` (
   `idsong` INT NOT NULL AUTO_INCREMENT,
   `song_name` VARCHAR(45) NOT NULL,
-  `song_length` VARCHAR(45) NOT NULL,
+  `song_length` VARCHAR(10) NOT NULL,
   `album_idalbum` INT NOT NULL,
   `album_artist_idartist` INT NOT NULL,
   PRIMARY KEY (`idsong`, `album_idalbum`, `album_artist_idartist`),

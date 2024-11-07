@@ -1,5 +1,6 @@
 <html lang="en">
 <?php
+    require_once('../source/database.php');
     require_once('../views/head.php');
 ?>
 
